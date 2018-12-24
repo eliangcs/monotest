@@ -5,6 +5,11 @@ if [ -z $NPM_REGISTRY ]; then
     exit 1
 fi
 
+if [ -z $NPM_TOKEN ]; then
+    (>&2 echo 'NPM_TOKEN is undefined')
+    exit 1
+fi
+
 NPM_PATH=`which npm`
 
 if [ $? -ne 0 ]; then
@@ -27,5 +32,11 @@ echo $PKG_NAME
 echo $PKG_VERSION
 
 cd packages/$PKG_NAME || exit 1
+
+NPMRC_PATH="$HOME/.npmrc"
+
+if [ ! -f $NPMRC_PATH ]; then
+    echo "$NPM_REGISTRY/:_authToken=\"$NPM_TOKEN\"" > $NPMRC_PATH
+fi
 
 npm publish --registry $NPM_REGISTRY
