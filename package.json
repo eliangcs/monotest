@@ -7,6 +7,6 @@
   },
   "scripts": {
     "test": "lerna run test --stream",
-    "postinstall": "lerna run bootstrap"
+    "postinstall": "lerna bootstrap"
   }
 }
