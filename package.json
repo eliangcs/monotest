@@ -6,6 +6,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "lerna run test --stream"
+    "test": "lerna run test --stream",
+    "postinstall": "lerna run bootstrap"
   }
 }
