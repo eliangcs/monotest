@@ -35,6 +35,7 @@ cd packages/$PKG_NAME || exit 1
 
 NPMRC_PATH="$HOME/.npmrc"
 
-echo "$NPM_REGISTRY/:_authToken=\"$NPM_TOKEN\"" > $NPMRC_PATH
+NPM_REGISTRY_NO_PROTO=`echo $NPM_REGISTRY | sed -E 's/^https?://'`
+echo "$NPM_REGISTRY_NO_PROTO/:_authToken=\"$NPM_TOKEN\"" > $NPMRC_PATH
 
 npm publish --registry $NPM_REGISTRY
