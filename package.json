@@ -8,6 +8,6 @@
   "scripts": {
     "test": "lerna run test --stream",
     "postinstall": "lerna bootstrap",
-    "version": "lerna version --exact --force-publish=AdditionModule,SubtractionModule"
+    "bump": "lerna version --exact --force-publish=AdditionModule,SubtractionModule"
   }
 }
