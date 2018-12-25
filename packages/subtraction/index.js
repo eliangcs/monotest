@@ -1,1 +1,3 @@
-module.exports.subtract = (a, b) => a - b;
+const additionModule = require('AdditionModule');
+
+module.exports.subtract = (a, b) => additionModule.add(a, -b);

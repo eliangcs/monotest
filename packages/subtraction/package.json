@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha test"
   },
+  "dependencies": {
+    "AdditionModule": "1.4.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
