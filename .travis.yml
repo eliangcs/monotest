@@ -10,3 +10,4 @@ deploy:
   on:
     tags: true
     node: 10
+  skip_cleanup: true
