@@ -28,14 +28,11 @@ if [ -z "$PKG_NAME" ] || [ -z "$PKG_VERSION" ]; then
     exit 1
 fi
 
-echo $PKG_NAME
-echo $PKG_VERSION
-
-cd packages/$PKG_NAME || exit 1
+cd packages/$PKG_DIR || exit 1
 
 NPMRC_PATH="$HOME/.npmrc"
 
 NPM_REGISTRY_NO_PROTO=`echo $NPM_REGISTRY | sed -E 's/^https?://'`
 echo "$NPM_REGISTRY_NO_PROTO/:_authToken=\"$NPM_TOKEN\"" > $NPMRC_PATH
 
-npm publish --registry $NPM_REGISTRY
+lerna run --stream --scope $PKG_NAME publish -- --registry $NPM_REGISTRY
