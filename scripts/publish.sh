@@ -28,8 +28,6 @@ if [ -z "$PKG_NAME" ] || [ -z "$PKG_VERSION" ]; then
     exit 1
 fi
 
-cd packages/$PKG_DIR || exit 1
-
 NPMRC_PATH="$HOME/.npmrc"
 
 NPM_REGISTRY_NO_PROTO=`echo $NPM_REGISTRY | sed -E 's/^https?://'`
@@ -39,5 +37,4 @@ pwd
 
 ls ./node_modules/.bin
 
-LERNA="./node_modules/.bin/lerna"
-$LERNA run --stream --scope $PKG_NAME publish -- --registry $NPM_REGISTRY
+lerna run --stream --scope $PKG_NAME publish -- --registry $NPM_REGISTRY
