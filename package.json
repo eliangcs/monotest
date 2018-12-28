@@ -9,5 +9,10 @@
     "test": "lerna run test --stream",
     "postinstall": "lerna bootstrap",
     "bump": "lerna version --exact --force-publish=AdditionModule,SubtractionModule"
+  },
+  "dependencies": {
+    "AdditionModule": "file:packages/addition",
+    "CalcModule": "file:packages/calc",
+    "SubtractionModule": "file:packages/subtraction"
   }
 }

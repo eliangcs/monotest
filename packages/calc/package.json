@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "AdditionModule": "1.9.0",
-    "SubtractionModule": "1.9.0"
+    "AdditionModule": "file:../addition",
+    "SubtractionModule": "file:../subtraction"
   }
 }

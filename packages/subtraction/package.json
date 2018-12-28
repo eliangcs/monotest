@@ -7,7 +7,7 @@
     "test": "mocha test"
   },
   "dependencies": {
-    "AdditionModule": "1.9.0"
+    "AdditionModule": "file:../addition"
   },
   "keywords": [],
   "author": "",
