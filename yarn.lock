@@ -818,9 +818,6 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"AdditionModule@file:packages/addition":
-  version "2.0.0"
-
 JSONStream@^1.0.4, JSONStream@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
@@ -828,11 +825,6 @@ JSONStream@^1.0.4, JSONStream@^1.3.4:
   dependencies:
     jsonparse "^1.2.0"
     through ">=2.2.7 <3"
-
-"SubtractionModule@file:packages/subtraction":
-  version "2.0.0"
-  dependencies:
-    AdditionModule "file:../../../Library/Caches/Yarn/v4/npm-ubtraction-odule-2.0.0-ce7a5022-35a4-48e9-a3b9-d35429210724-1561533885606/node_modules/addition"
 
 abbrev@1:
   version "1.1.1"
@@ -2673,7 +2665,7 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-lerna@^3.8.0:
+lerna@^3.15.0:
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.15.0.tgz#b044dba8138d7a1a8dd48ac1d80e7541bdde0d1f"
   integrity sha512-kRIQ3bgzkmew5/WZQ0C9WjH0IUf3ZmTNnBwTHfXgLkVY7td0lbwMQFD7zehflUn0zG4ou54o/gn+IfjF0ti/5A==
