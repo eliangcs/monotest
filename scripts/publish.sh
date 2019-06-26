@@ -24,4 +24,4 @@ NPMRC_PATH="$HOME/.npmrc"
 NPM_REGISTRY_NO_PROTO=`echo $NPM_REGISTRY | sed -E 's/^https?://'`
 echo "$NPM_REGISTRY_NO_PROTO/:_authToken=\"$NPM_TOKEN\"" > $NPMRC_PATH
 
-lerna run --stream --scope $PKG_NAME publish -- --registry $NPM_REGISTRY
+lerna run --npm-client npm --stream --scope $PKG_NAME publish -- --registry $NPM_REGISTRY
