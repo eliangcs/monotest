@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ -z $TRAVIS_TAG ]; then
+    (>&2 echo 'TRAVIS_TAG is undefined')
+    exit 1
+fi
+
 if [ -z $NPM_REGISTRY ]; then
     (>&2 echo 'NPM_REGISTRY is undefined')
     exit 1
@@ -24,4 +29,6 @@ NPMRC_PATH="$HOME/.npmrc"
 NPM_REGISTRY_NO_PROTO=`echo $NPM_REGISTRY | sed -E 's/^https?://'`
 echo "$NPM_REGISTRY_NO_PROTO/:_authToken=\"$NPM_TOKEN\"" > $NPMRC_PATH
 
-lerna run --npm-client npm --stream --scope $PKG_NAME publish -- --registry $NPM_REGISTRY
+PKG_PATH=`yarn workspaces info -s | jq -r .$PKG_NAME.location`
+cd $PKG_PATH
+npm publish --registry $NPM_REGISTRY
