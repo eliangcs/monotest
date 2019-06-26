@@ -10,15 +10,6 @@ if [ -z $NPM_TOKEN ]; then
     exit 1
 fi
 
-NPM_PATH=`which npm`
-
-if [ $? -ne 0 ]; then
-    (>&2 echo 'npm not found')
-    exit 1
-fi
-
-echo "npm found at $NPM_PATH"
-
 # Split PackageName@x.y.z into 'PackageName' and 'x.y.z'
 PKG_NAME=`echo $TRAVIS_TAG | grep '@' | cut -d '@' -f 1`
 PKG_VERSION=`echo $TRAVIS_TAG | grep '@' | cut -d '@' -f 2`

@@ -5,14 +5,9 @@
     "lerna": "^3.8.0",
     "mocha": "^5.2.0"
   },
+  "workspaces": ["packages/*"],
   "scripts": {
     "test": "lerna run test --stream",
-    "postinstall": "lerna bootstrap",
     "bump": "lerna version --exact --force-publish=AdditionModule,SubtractionModule"
-  },
-  "dependencies": {
-    "AdditionModule": "file:packages/addition",
-    "CalcModule": "file:packages/calc",
-    "SubtractionModule": "file:packages/subtraction"
   }
 }
