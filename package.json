@@ -11,5 +11,6 @@
   "scripts": {
     "test": "lerna run test --stream",
     "bump": "lerna version --exact --force-publish=AdditionModule,SubtractionModule"
-  }
+  },
+  "version": "1.0.3"
 }
